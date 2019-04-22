@@ -7,6 +7,9 @@ const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 5555;
 
 app.get('/favicon.ico', (req, res, next) => {
   const startView = Date.now();
+  const referer = req.get('referer');
+
+  if (!referer) { return res.end(); }
 
   res.writeHead(200, {
     'Content-Type': 'image/x-icon',
@@ -26,7 +29,7 @@ app.get('/favicon.ico', (req, res, next) => {
     const endView = Date.now();
     const duration = ((endView - startView) / 1000).toFixed(2);
 
-    console.log(`visit took ${duration} s`);
+    console.log(`${referer} visit took ${duration} s`);
   });
 });
 
