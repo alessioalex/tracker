@@ -1,0 +1,13 @@
+{
+  "name": "tracking-time",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "author": "Alexandru Vladutu",
+  "license": "Apache-2.0"
+}
